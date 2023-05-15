@@ -9,6 +9,7 @@ export function Genre({ name } : GenreProps){
         
         <div className="cards">
             <h1>{name}</h1>
+            <a></a>
         </div>
     )
 }
