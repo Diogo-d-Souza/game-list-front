@@ -1,0 +1,28 @@
+.generos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.button{
+    display: inline-block;
+    background-color: rgb(138, 233, 209);
+    border: none;
+    padding: 6px 12px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}

@@ -5,14 +5,14 @@ import { GameListWithGenreData } from "../interfaces/GameListWithGenreData"
 
 const API_URL = "http://localhost:8080"
 
-export const fetchGamesByGenreId = async (genreId: number): AxiosPromise<GameListWithGenreData[]> => {
+export const fetchGamesByGenreId = async (genreId: number): Promise<GameListWithGenreData[]> => {
   const [gamesResponse, genresResponse] = await Promise.all([
     axios.get(`${API_URL}/lists/${genreId}/games`),
     axios.get(`${API_URL}/lists`),
   ]);
 
-  const gamesData = gamesResponse.data;
-  const genreName = genresResponse.data[genreId-1].name;
+  const gamesData = gamesResponse.data
+  const genreName = genresResponse.data[genreId-1].name
 
   const gamesWithGenreName = gamesData.map((gameData: GameListWithGenreData) => ({
     ...gameData,
@@ -29,6 +29,9 @@ export function useGameListData(id: number) {
       retry: 2
     });
   
-    return query
+    return {
+      ...query,
+      data: query.data ?? []
+    }
     
   }
