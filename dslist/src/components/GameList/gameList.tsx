@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
 import { GameListData } from "../../interfaces/GameListData"
 import { useGameListData } from "../../hooks/useGameListData";
+import { GameListWithGenreData } from "../../interfaces/GameListWithGenreData";
 
 interface GameListProps {
-    games?: GameListData[]
+    games?: GameListWithGenreData[]
 
 }
 
@@ -12,7 +13,7 @@ export function GameList({ games }: GameListProps) {
     return (
 
         <div className="cards">
-            <h1>TE</h1>
+            <h1>{games?.[0]?.genreName}</h1>
 
             {games?.map(game => (
                 <div>
